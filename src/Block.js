@@ -39,7 +39,14 @@ const Block = (props) => {
       variantId: selectedVariant.id,
       itemPrice: selectedVariant.price,
     }
-    props.pubSub.publish(props.events.cart.addToCart, productVariant)
+    props.utils.pubSub.publish(
+      props.utils.events.cart.addToCart,
+      productVariant
+    )
+    console.log(
+      props.utils.events.cart.addToCart,
+      JSON.stringify(productVariant)
+    )
   }
   function onOptionSelected(value, index) {
     const updatedSelection = [...selectedOptions]
