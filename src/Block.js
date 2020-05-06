@@ -1,13 +1,28 @@
-import React from 'react';
-import { css, StyleSheet } from 'aphrodite/no-important';
-import { getStyles } from './getStyles';
-import { defaultConfig } from './configs';
+import React from "react"
+import { css, StyleSheet } from "aphrodite/no-important"
+import { getStyles } from "./getStyles"
+import { defaultConfig } from "./configs"
 
-const Block = props => {
-    const classes = StyleSheet.create(getStyles(props));
-    return <h1 className={css(classes.example)}>{props.text}</h1>;
-};
+const Block = (props) => {
+  const classes = StyleSheet.create(getStyles(props))
 
-Block.defaultProps = defaultConfig;
+  const product = props.data
+  if (!product.id) {
+    return (
+      <div>
+        <h1 className={css(classes.example)}>{props.text}</h1>
+        <h1>Product Landing Block</h1>
+      </div>
+    )
+  }
+  return (
+    <div>
+      <h1 className={css(classes.example)}>{props.text}</h1>
+      <h1>{product.name}</h1>
+    </div>
+  )
+}
 
-export default Block;
+Block.defaultProps = defaultConfig
+
+export default Block
