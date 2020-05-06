@@ -2,7 +2,7 @@ const tenantId = "5ea1e8078b7634580628ec27" // Derek Store
 // const tenantId = "586aa7bc3e140400156259a5" // Volusion Example
 
 const localEnvPropOverrides = {
-  productSlug: "test-item-2",
+  productSlug: "test-item-1",
   // productSlug: "water-bottle",
 }
 
